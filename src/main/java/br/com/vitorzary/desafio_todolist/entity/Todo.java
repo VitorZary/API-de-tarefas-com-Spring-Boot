@@ -1,6 +1,7 @@
 package br.com.vitorzary.desafio_todolist.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "todos")
@@ -9,10 +10,19 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private String descricao;
     private boolean realizado;
     private int prioridade;
+
+    public Todo(String descricao, String nome, boolean realizado, int prioridade) {
+        this.descricao = descricao;
+        this.nome = nome;
+        this.realizado = realizado;
+        this.prioridade = prioridade;
+    }
 
     public Long getId() {
         return id;
