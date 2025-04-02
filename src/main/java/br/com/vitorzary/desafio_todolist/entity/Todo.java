@@ -17,6 +17,9 @@ public class Todo {
     private boolean realizado;
     private int prioridade;
 
+    public Todo() {
+    }
+
     public Todo(String descricao, String nome, boolean realizado, int prioridade) {
         this.descricao = descricao;
         this.nome = nome;
